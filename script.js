@@ -1,5 +1,5 @@
 // local reviews data
-const reviews = [
+const REVIEWS = [
     {
       id: 1,
       name: 'susan smith',
@@ -29,3 +29,22 @@ const reviews = [
       text: 'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ',
     },
   ];
+
+const IMG = document.getElementById("person-img");
+const AUTHOR = document.getElementById("author");
+const JOB = document.getElementById("job");
+const INFO = document.getElementById("info");
+
+const PREVIOUSBTN = document.querySelector(".prev-btn");
+const NEXTBTN = document.querySelector(".next-btn");
+const RANDOM = document.querySelector(".random-btn");
+
+let currentItem = 2;
+
+window.addEventListener('DOMContentLoaded', function() {
+    const ITEM = REVIEWS[currentItem];
+    IMG.src = ITEM.img;
+    AUTHOR.textContent = ITEM.name;
+    JOB.textContent = ITEM.job;
+    INFO.textContent = ITEM.text
+})
