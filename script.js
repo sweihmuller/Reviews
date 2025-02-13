@@ -36,7 +36,7 @@ const JOB = document.getElementById("job");
 const INFO = document.getElementById("info");
 const PREVIOUSBTN = document.querySelector(".prev-btn");
 const NEXTBTN = document.querySelector(".next-btn");
-const RANDOM = document.querySelector(".random-btn");
+const RANDOMBTN = document.querySelector(".random-btn");
 
 let currentPerson = 0;
 
@@ -67,3 +67,12 @@ PREVIOUSBTN.addEventListener('click', function() {
     }
     showPerson(currentPerson);
 })
+
+RANDOMBTN.addEventListener('click', function() {
+    currentPerson = getRandomPerson();
+    showPerson(currentPerson);
+})
+
+function getRandomPerson() {
+    return Math.floor(Math.random() * REVIEWS.length);
+}
