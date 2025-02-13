@@ -39,12 +39,16 @@ const PREVIOUSBTN = document.querySelector(".prev-btn");
 const NEXTBTN = document.querySelector(".next-btn");
 const RANDOM = document.querySelector(".random-btn");
 
-let currentItem = 2;
+let currentPerson = 2;
 
 window.addEventListener('DOMContentLoaded', function() {
-    const ITEM = REVIEWS[currentItem];
-    IMG.src = ITEM.img;
-    AUTHOR.textContent = ITEM.name;
-    JOB.textContent = ITEM.job;
-    INFO.textContent = ITEM.text
+    showPerson(currentPerson)
 })
+
+function showPerson(person) {
+    const PERSON = REVIEWS[person];
+    IMG.src = PERSON.img;
+    AUTHOR.textContent = PERSON.name;
+    JOB.textContent = PERSON.job;
+    INFO.textContent = PERSON.text
+}
