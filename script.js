@@ -59,3 +59,11 @@ NEXTBTN.addEventListener('click', function() {
     }
     showPerson(currentPerson);
 })
+
+PREVIOUSBTN.addEventListener('click', function() {
+    currentPerson--;
+    if(currentPerson < 0) {
+        currentPerson = REVIEWS.length - 1;
+    }
+    showPerson(currentPerson);
+})
