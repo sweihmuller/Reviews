@@ -34,12 +34,11 @@ const IMG = document.getElementById("person-img");
 const AUTHOR = document.getElementById("author");
 const JOB = document.getElementById("job");
 const INFO = document.getElementById("info");
-
 const PREVIOUSBTN = document.querySelector(".prev-btn");
 const NEXTBTN = document.querySelector(".next-btn");
 const RANDOM = document.querySelector(".random-btn");
 
-let currentPerson = 2;
+let currentPerson = 0;
 
 window.addEventListener('DOMContentLoaded', function() {
     showPerson(currentPerson)
@@ -50,5 +49,13 @@ function showPerson(person) {
     IMG.src = PERSON.img;
     AUTHOR.textContent = PERSON.name;
     JOB.textContent = PERSON.job;
-    INFO.textContent = PERSON.text
+    INFO.textContent = PERSON.text;
 }
+
+NEXTBTN.addEventListener('click', function() {
+    currentPerson++;
+    if(currentPerson > REVIEWS.length - 1) {
+        currentPerson = 0;
+    }
+    showPerson(currentPerson);
+})
